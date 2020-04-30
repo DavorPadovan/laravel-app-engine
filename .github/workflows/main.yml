@@ -13,18 +13,18 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+      - name: Change workdir
+        run: cd app
+    
+      - name: Install dependencies
+        uses: php-actions/composer@v1
+
       - name: Setup gcloud
-        if: success()
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           project_id: ${{SECRETS.GCLOUD_PROJECT_ID}}
           service_account_key: ${{SECRETS.GCLOUD_AUTH}}
           export_default_credentials: true
-      
-      - name: Install dependencies
-        uses: php-actions/composer@v1
-        with:
-          command: cd app && composer install
 
       - name: Deploy
         if: success()

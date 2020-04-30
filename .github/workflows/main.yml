@@ -9,12 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: app
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-
-      - name: Change workdir
-        run: cd app
     
       - name: Install dependencies
         uses: php-actions/composer@v1

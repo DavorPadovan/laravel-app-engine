@@ -1,0 +1,6 @@
+FROM grpc/php
+
+ADD ./app /app
+WORKDIR /app
+
+CMD composer install

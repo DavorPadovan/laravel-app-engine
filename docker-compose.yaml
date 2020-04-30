@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    image: laravel-gae-app:1.0
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/app
+    environment:
+      # FIRESTORE CONNECTION
+      - FIRESTORE_DATASET=test
+      - FIRESTORE_PROJECT_ID=test
+      - FIRESTORE_EMULATOR_HOST=firestore:8081
+
+  firestore:
+    build:
+      context: .
+      dockerfile: Dockerfile-firestore
+    image: laravel-gae-firestore:1.0
+    ports:
+      - 8001:8001
+    environment:
+      - CLOUDSDK_CORE_PROJECT=test
+
+  composer:
+    build:
+      context: .
+      dockerfile: Dockerfile-composer
+    image: laravel-gae-composer:1.0
+    volumes:
+      - ./app:/app
+
+volumes:
+  app:

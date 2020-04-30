@@ -1,9 +1,5 @@
 runtime: php73
 
 env_variables:
-  APP_NAME: Laravel
-  APP_ENV: production
   APP_KEY: base64:G0xOQVusn/SeRneSj7PfueuWMjSyIHE+a9Ow7v1qJdY=
-  APP_DEBUG: false
-  
   SESSION_DRIVER: cookie

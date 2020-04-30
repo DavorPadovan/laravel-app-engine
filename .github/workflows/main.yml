@@ -23,4 +23,4 @@ jobs:
 
       - name: Deploy
         if: success()
-        run: cd app && gcloud app deploy -q --version test
+        run: cd app && gcloud beta app deploy -q --version=test --no-cache

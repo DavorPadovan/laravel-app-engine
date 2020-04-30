@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: app
+        working-directory: ./app
 
     steps:
       - name: Checkout repo

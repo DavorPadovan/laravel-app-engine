@@ -13,6 +13,9 @@ services:
       - FIRESTORE_DATASET=test
       - FIRESTORE_PROJECT_ID=test
       - FIRESTORE_EMULATOR_HOST=firestore:8081
+    depends_on:
+      - firestore
+      - composer
 
   firestore:
     build:

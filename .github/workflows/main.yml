@@ -15,7 +15,7 @@ jobs:
     
       - name: Install dependencies
         uses: php-actions/composer@v1
-        working-directory: ./app
+        run: cd app && composer install
 
       - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -26,5 +26,4 @@ jobs:
 
       - name: Deploy
         if: success()
-        working-directory: ./app
         run: gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache

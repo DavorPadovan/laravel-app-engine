@@ -25,4 +25,4 @@ jobs:
 
       - name: Deploy
         if: success()
-        run: gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache
+        run: cd app && gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache

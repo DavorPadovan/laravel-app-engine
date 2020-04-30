@@ -20,7 +20,12 @@ jobs:
           project_id: ${{SECRETS.GCLOUD_PROJECT_ID}}
           service_account_key: ${{SECRETS.GCLOUD_AUTH}}
           export_default_credentials: true
+      
+      - name: Install dependencies
+        uses: php-actions/composer@v1
+        with:
+          command: cd app && composer install
 
       - name: Deploy
         if: success()
-        run: cd app && gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache
+        run: gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache

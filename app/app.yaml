@@ -6,6 +6,3 @@ env_variables:
   LOG_CHANNEL: stackdriver
   SESSION_DRIVER: cookie
   VIEW_COMPILED_PATH: /tmp
-
-  # TESTING ONLY
-  APP_DEBUG: true

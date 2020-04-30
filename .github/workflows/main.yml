@@ -9,16 +9,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./app
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
     
       - name: Install dependencies
         uses: php-actions/composer@v1
+        working-directory: ./app
 
       - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -29,4 +26,5 @@ jobs:
 
       - name: Deploy
         if: success()
+        working-directory: ./app
         run: gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache

@@ -9,12 +9,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./app
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
     
       - name: Install dependencies
-        run: cd app && composer install
+        run: composer install
 
       - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -25,4 +29,4 @@ jobs:
 
       - name: Deploy
         if: success()
-        run: cd app && gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache
+        run: gcloud components install beta -q && gcloud beta app deploy -q --version=test --no-cache

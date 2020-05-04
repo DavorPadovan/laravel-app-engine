@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce2f941298812e6f9aeeea8c9cc6f77c",
+    "content-hash": "305808dd2cef66e23dde8a3cd94a2d1d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -483,6 +483,59 @@
             "time": "2020-03-25T18:49:23+00:00"
         },
         {
+            "name": "firevel/firestore-session-driver",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firevel/firestore-session-driver.git",
+                "reference": "d89bb3b437bc0d94bd04d9c1193295e2d5ebf1f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firevel/firestore-session-driver/zipball/d89bb3b437bc0d94bd04d9c1193295e2d5ebf1f9",
+                "reference": "d89bb3b437bc0d94bd04d9c1193295e2d5ebf1f9",
+                "shasum": ""
+            },
+            "require": {
+                "google/cloud-firestore": "^1.5",
+                "grpc/grpc": "^1.19"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Firevel\\FirestoreSessionDriver\\FirestoreSessionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Firevel\\FirestoreSessionDriver\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Slowik",
+                    "email": "michael.slowik@firevel.com"
+                }
+            ],
+            "description": "Firestore session driver for Laravel app running inside Google App Engine.",
+            "keywords": [
+                "app engine",
+                "driver",
+                "firestore",
+                "firevel",
+                "google cloud",
+                "laravel",
+                "session"
+            ],
+            "time": "2019-06-23T18:25:37+00:00"
+        },
+        {
             "name": "fruitcake/laravel-cors",
             "version": "v1.0.6",
             "source": {
@@ -661,6 +714,57 @@
                 "Apache-2.0"
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
+            "time": "2020-04-22T21:58:25+00:00"
+        },
+        {
+            "name": "google/cloud-firestore",
+            "version": "v1.12.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-cloud-php-firestore.git",
+                "reference": "d553f08a5954a0fd0680d803c298b51cedc9cf67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-firestore/zipball/d553f08a5954a0fd0680d803c298b51cedc9cf67",
+                "reference": "d553f08a5954a0fd0680d803c298b51cedc9cf67",
+                "shasum": ""
+            },
+            "require": {
+                "ext-grpc": "*",
+                "google/cloud-core": "^1.35",
+                "google/gax": "^1.1",
+                "ramsey/uuid": "^3.0|^4.0"
+            },
+            "require-dev": {
+                "erusev/parsedown": "^1.6",
+                "phpdocumentor/reflection": "^3.0",
+                "phpunit/phpunit": "^4.8|^5.0",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "ext-protobuf": "Provides a significant increase in throughput over the pure PHP protobuf implementation. See https://cloud.google.com/php/grpc for installation instructions."
+            },
+            "type": "library",
+            "extra": {
+                "component": {
+                    "id": "cloud-firestore",
+                    "target": "googleapis/google-cloud-php-firestore.git",
+                    "path": "Firestore",
+                    "entry": "src/FirestoreClient.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Google\\Cloud\\Firestore\\": "src",
+                    "GPBMetadata\\Google\\Firestore\\": "metadata"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Cloud Firestore client for PHP",
             "time": "2020-04-22T21:58:25+00:00"
         },
         {
@@ -5935,6 +6039,5 @@
     "platform": {
         "php": "^7.2.5"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }

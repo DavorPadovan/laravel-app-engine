@@ -1,0 +1,7 @@
+FROM python
+
+RUN pip install gcloud-storage-emulator
+
+EXPOSE 9090
+
+CMD gcloud-storage-emulator start --port=9090

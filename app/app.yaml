@@ -4,5 +4,5 @@ env_variables:
   APP_KEY: base64:G0xOQVusn/SeRneSj7PfueuWMjSyIHE+a9Ow7v1qJdY=
   APP_STORAGE: /tmp
   LOG_CHANNEL: stackdriver
-  SESSION_DRIVER: cookie
+  SESSION_DRIVER: firestore
   VIEW_COMPILED_PATH: /tmp

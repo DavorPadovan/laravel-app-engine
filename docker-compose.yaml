@@ -12,7 +12,7 @@ services:
       # FIRESTORE CONNECTION
       - FIRESTORE_DATASET=test
       - FIRESTORE_PROJECT_ID=test
-      - FIRESTORE_EMULATOR_HOST=firestore:8081
+      - FIRESTORE_EMULATOR_HOST=firestore:8001
     depends_on:
       - firestore
       - composer

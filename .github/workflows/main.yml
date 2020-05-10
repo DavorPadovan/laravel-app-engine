@@ -24,7 +24,7 @@ jobs:
         run: apt-get update && apt-get install python3.6
 
       - name: Check Python version
-        run: python --version
+        run: python3 --version
 
       - name: Install dependencies
         run: composer install
